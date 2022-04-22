@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio Web</title>
+
+    <style>
+    body{
+
+        background-color: rgb(136, 136, 136);
+        font: normal 14pt Arial;
+
+    }
+
+    header{
+
+        color: black;
+        text-align: center;
+
+
+    }
+
+    section{
+
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 15px;
+        width: 500px;
+        margin: auto;
+        box-shadow: 5px 5px 10px;
+        height: 300px
+
+    }
+    footer{
+        margin-top: 10px;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        font-style: italic;
+
+    }
+
+    #imgteste{
+
+        width: 200px;
+        height: 200px;
+        box-shadow: 5px 5px 10px;
+        border-radius: 1000px;
+        margin-top: 10px;
+
+    }
+
+    #central{
+        text-align: center;
+    }
+
+    header{
+        color: #ffffff;
+    }
+
+    </style>
+
+
+
+</head>
+<body onload="carregar()">
+    <header>
+        <h1>Relógio Web</h1>
+    </header>
+
+
+    <section>
+
+    <div id="central">
+
+        <p id="msgOla"></p>
+
+    <div id="msg">
+
+    </div>
+
+    <div id="imagem">
+
+
+    </div>
+    </div>
+    </section>
+
+
+
+
+
+    <footer>
+        Rafael Radieddine
+    </footer>
+
+
+
+<script>
+
+
+    function carregar(){
+
+        var msg = document.getElementById('msg')
+        var foto = document.getElementById('imagem')
+        var msgOla = document.getElementById('msgOla')
+        var data = new Date()
+        var hora = 20
+
+        msg.innerHTML = `Agora são ${hora} horas.`
+
+        if (hora >= 6 && hora < 12) {
+            //manhã
+            msgOla.innerHTML = "Bom dia!"
+            foto.innerHTML = '<img id="imgteste" src="fotomanha.png">'
+            document.body.style.background = '#8FBC8F'
+
+        }else if (hora >= 12 && hora <= 18){
+            //tarde
+            msgOla.innerHTML = "Boa tarde!"
+            foto.innerHTML = '<img id="imgteste" src="fototarde.png">'
+            document.body.style.background = '#87CEEB'
+
+        }else {
+            //noite
+            msgOla.innerHTML = "Boa noite!"
+            foto.innerHTML = '<img id="imgteste" src="fotonoite.png">'
+            document.body.style.background = '#1C1C1C'
+
+        }
+
+    }
+
+</script>
+</body>
+</html>
